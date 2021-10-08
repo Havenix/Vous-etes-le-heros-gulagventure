@@ -8,17 +8,17 @@ const chaptersObj = {
         options: [
             /**Grotte = **/ 
             {
-                texte: "Vous décidez d'entrer dans la grotte",
+                text: "Vous décidez d'entrer dans la grotte",
                 action: "goToChapter('dead_grotte')",
             },
             /**Foret = **/  
             {
-                texte: "Vous décidez d'entrer dans la forêt",
+                text: "Vous décidez d'entrer dans la forêt",
                 action: "goToChapter('entree_foret')",
             },
             /**Attendre = **/ 
             {
-                texte: "Attendre un passant",
+                text: "Attendre un passant",
                 action: "goToChapter('waiting_tatakae')",
             },
         ],
@@ -32,13 +32,13 @@ const chaptersObj = {
         options: [
             // entre: 
             {
-                texte: "Vous prenez votre courage a douze mains et entrer dans la forêt...",
+                text: "Vous prenez votre courage a douze mains et entrer dans la forêt...",
                 action: "goToChapter('dead_foret')",
             },
     
             // retourne: 
             {
-                texte: "Vous avez assez vu de film d'horreur pour savoir de ne pas entré dans les forêts.",
+                text: "Vous avez assez vu de film d'horreur pour savoir de ne pas entré dans les forêts.",
                 action: "goToChapter('Gulag_Island')",
             },
         ],
@@ -52,19 +52,19 @@ const chaptersObj = {
         options: [
             /*SuperCoupDeBoule =*/ 
             {
-                texte: "Vous sautez comme Zidane avec un coup de boule",
+                text: "Vous sautez comme Zidane avec un coup de boule",
                 action: "goToChapter('dead_crane')",
             },
     
             /*Invoquation = */
             {
-                texte: "Vous invoquez Dieu",
+                text: "Vous invoquez Dieu",
                 action: "goToChapter('dead_dieu')",
             },
     
             /*dance = */
             {
-                texte: "Vous sortez des moves de ouf pour le vaincre",
+                text: "Vous sortez des moves de ouf pour le vaincre",
                 action: "goToChapter('dance_battle')",
             },
         ],
@@ -77,13 +77,13 @@ const chaptersObj = {
         options: [
             /*Thriller = */
             {
-                texte: "Vous bustez les moves comme jamais avec une armée de zombies",
+                text: "Vous bustez les moves comme jamais avec une armée de zombies",
                 action: "goToChapter('dead_zombie')",
             },
     
             /*SmoothCriminal = */
             {
-                texte: "L'esprit de MJ vous envahis sortant les moves d'un smooth criminal",
+                text: "L'esprit de MJ vous envahis sortant les moves d'un smooth criminal",
                 action: "goToChapter('createur_lumiere')",
             },
         ],
@@ -96,7 +96,7 @@ const chaptersObj = {
         options: [
             /*DirectionForet = */
             {
-                texte: "armer de la Lumière, vous êtes maintenant prêt à affronter le dernier boss! Direction la foret!",
+                text: "armer de la Lumière, vous êtes maintenant prêt à affronter le dernier boss! Direction la foret!",
                 action: "goToChapter('retour_foret')",
             },
         ],
@@ -109,13 +109,13 @@ const chaptersObj = {
         options: [
             /*pewpewpew = */
             {
-                texte: "Vous sortez vos doight pistol et tirez pewpewpew!",
+                text: "Vous sortez vos doight pistol et tirez pewpewpew!",
                 action: "goToChapter('dead_pewpewpew')",
             },
     
             /*TheKnee = */
             {
-                texte: "La force sublime de Captain Falcon surgis de vous! FALCON KNEE!",
+                text: "La force sublime de Captain Falcon surgis de vous! FALCON KNEE!",
                 action: "goToChapter('phase_deux')",
             },
         ],
@@ -128,19 +128,19 @@ const chaptersObj = {
         options: [
             /*Izanagi = */
             {
-            texte: "MEGIDOLAON!",
+            text: "MEGIDOLAON!",
             action: "goToChapter('final_attack')",
             },
 
             /*Orpheus = */
             {
-            texte: "AGIDYNE!",
+            text: "AGIDYNE!",
             action: "goToChapter('final_attack')",
             },
 
             /*Arsene = */
             {
-            texte: "MAEIGAON!",
+            text: "MAEIGAON!",
             action: "goToChapter('final_attack')",
             },
         ],
@@ -153,13 +153,13 @@ const chaptersObj = {
         options: [
             /*Friendship = */
             {
-                texte: "Utilise Le pouvoir de l amitié. cent pourcent ça marche car le pouvoir de l amitié est imbattable",
+                text: "Utilise Le pouvoir de l amitié. cent pourcent ça marche car le pouvoir de l amitié est imbattable",
                 action: "goToChapter('dead_friendship')",
             },
     
             /*FusionWeebCeleste = */
             {
-                texte: "Naruto, Ichigo, Luffy et Son Goku apparaît et vous fusionnez pour créer l'ultime Weeb",
+                text: "Naruto, Ichigo, Luffy et Son Goku apparaît et vous fusionnez pour créer l'ultime Weeb",
                 action: "goToChapter('getsuga_gomu_rasen_ha')",
             },
         ],
@@ -172,7 +172,7 @@ const chaptersObj = {
         options: [
             /*butin = */
             {
-                texte: "Vous avez fini. La récompense est maintenant à vous! Félicitation!",
+                text: "Vous avez fini. La récompense est maintenant à vous! Félicitation!",
                 action: "goToChapter('good_ending')",
             },
         ],
@@ -180,7 +180,7 @@ const chaptersObj = {
     
     good_ending: {
             subtitle: "Félicitation!", 
-            texte:"Merci d'avoir fini mon jeu et de pas avoir utilisé le pouvoir de l'amitier! Si vous l'avez choisi et c'est votre deuxième fois à jouer, parlez moi plus jamais. Merci.",
+            text:"Merci d'avoir fini mon jeu et de pas avoir utilisé le pouvoir de l'amitier! Si vous l'avez choisi et c'est votre deuxième fois à jouer, parlez moi plus jamais. Merci.",
             img: "",
         },
     
@@ -217,16 +217,14 @@ img = img
 
     console.log(chapitre.subtitle);
     console.log(chapitre.text);
-    console.log(chapitre.texte);
     console.log(chapitre.img);
     console.log(chapitre.action);
     // console.log(chapitre.options);
 
-    const optionsArr = [];
-    console.log(optionsArr.length);
+    const choix = ["MEGIDOLAON!", "AGIDYNE!", "MAEIGAON!"];
 
     for (let index = 0; index <=2; index++) {
-    const bruh = optionsArr[index];
+    const bruh = choix[index];
     console.log(bruh);
 }
   };
