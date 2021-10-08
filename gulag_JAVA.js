@@ -219,14 +219,15 @@ img = img
     console.log(chapitre.text);
     console.log(chapitre.img);
     // console.log(chapitre.action);
-    // console.log(chapitre.options);
+    console.log(chapitre.options);
 
-    const choix = ["MEGIDOLAON!", "AGIDYNE!", "MAEIGAON!"];
+    //------boucle-----------//
+//     const choix = ["MEGIDOLAON!", "AGIDYNE!", "MAEIGAON!"];
 
-    for (let index = 0; index <=2; index++) {
-    const bruh = choix[index];
-    console.log(bruh);
-}
+//     for (let index = 0; index <=2; index++) {
+//     const bruh = choix[index];
+//     console.log(bruh);
+// }
   };
 
 
