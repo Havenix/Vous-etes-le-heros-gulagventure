@@ -1,9 +1,9 @@
 :root {
-    --camel: #af9164;
-    --lace: #f7f3e3;
+    --screen: #af9164;
+    --text: #f7f3e3;
     --gray: #b3b6b7;
-    --red: #6f1a07;
-    --bistre: #2b2118;
+    --button: #6f1a07;
+    --bg: #2b2118;
 }
 @font-face {
     font-family: "abel" ;
@@ -15,7 +15,7 @@
     src: url(assets/Tourney.ttf);
 }
 body {
-    background-color: var(--bistre);
+    background-color: var(--bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,7 @@ body {
 }
 
 .game {
-    background-color: var(--camel);
+    background-color: var(--screen);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -46,8 +46,8 @@ button:hover{
     color: blueviolet;
 }
 button{
-    background-color: var(--red);
-    color: var(--lace);
+    background-color: var(--button);
+    color: var(--text);
 }
 .bouton {
     display: flex;
@@ -67,6 +67,11 @@ p {
 h1 {
     font-family: "Tourney";
     font-size: 40px;
+}
+.p2 {
+    font-family: "Tourney";
+    font-size: 70px;
+    font-weight: bolder;
 }
 .a, .b, .c {
     border-radius: 10px;
