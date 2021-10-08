@@ -218,7 +218,7 @@ img = img
     console.log(chapitre.subtitle);
     console.log(chapitre.text);
     console.log(chapitre.img);
-    console.log(chapitre.action);
+    // console.log(chapitre.action);
     // console.log(chapitre.options);
 
     const choix = ["MEGIDOLAON!", "AGIDYNE!", "MAEIGAON!"];
