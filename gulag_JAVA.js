@@ -2,82 +2,82 @@
 // changer le text des options pour plus court
 const chaptersObj = {
     gulag_island: {
-        subtitle: "Gulag Island",
+        subtitle: "GULAG ISLAND",
         text:"L'aventure commence, vous arrivez enfin sur l'ile de Fortuna. Trois choix s'offre a vous:",
         img: "",
         options: [
             /**Grotte = **/ 
             {
-                text: "Vous décidez d'entrer dans la grotte",
+                text: "Entrer dans la grotte",
                 action: "goToChapter('dead_grotte')",
             },
             /**Foret = **/  
             {
-                text: "Vous décidez d'entrer dans la forêt",
-                action: "goToChapter('entree_foret')",
+                text: "Attendre un passant",
+                action: "goToChapter('waiting_tatakae')",
             },
             /**Attendre = **/ 
             {
-                text: "Attendre un passant",
-                action: "goToChapter('waiting_tatakae')",
+                text: "Entrer dans la forêt",
+                action: "goToChapter('entree_foret')",
             },
         ],
     },
 
     entree_foret: {
-        subtitle: "decision", 
+        subtitle: "DÉCISION", 
         text:"Un vent extrêmement froid vous passe par le dos. Vous vous demandez si c'est vraiment un bon choix...",
         img: "",
     
         options: [
             // entre: 
             {
-                text: "Vous prenez votre courage a douze mains et entrer dans la forêt...",
-                action: "goToChapter('dead_foret')",
+                text: "Vous avez assez vu de film d'horreur pour savoir de ne pas entrer dans les forêts.",
+                action: "goToChapter('gulag_island')",
             },
-    
             // retourne: 
             {
-                text: "Vous avez assez vu de film d'horreur pour savoir de ne pas entré dans les forêts.",
-                action: "goToChapter('Gulag_Island')",
+                text: "Prenez votre courage a douze mains et entrer dans la forêt...",
+                action: "goToChapter('dead_foret')",
             },
         ],
     },
 
     waiting_tatakae: {
-        subtitle: "Waiting? Tatakae!", 
+        subtitle: "WAITING? TATAKAE!", 
         text:"Vous en avez marre d'attendre et decidez d'aller attaquer directement le créateur. Trois attaques sont offert a vous:",
         img: "",
     
         options: [
             /*SuperCoupDeBoule =*/ 
             {
-                text: "Vous sautez comme Zidane avec un coup de boule",
-                action: "goToChapter('dead_crane')",
+                text: "Utiliser des moves de ouf pour le vaincre",
+                action: "goToChapter('dance_battle')",
             },
+    
     
             /*Invoquation = */
             {
-                text: "Vous invoquez Dieu",
-                action: "goToChapter('dead_dieu')",
+                text: "Sauter comme Zidane avec un coup de boule",
+                action: "goToChapter('dead_crane')",
             },
-    
+
             /*dance = */
             {
-                text: "Vous sortez des moves de ouf pour le vaincre",
-                action: "goToChapter('dance_battle')",
+                text: "Invoquer Dieu",
+                action: "goToChapter('dead_dieu')",
             },
         ],
     },
 
     dance_battle: {
-        subtitle: "dance battle!", 
+        subtitle: "SO YOU THING YOU CAN DANCE?!", 
         text:"C'est le temps de bust-a-move!",
         img: "",
         options: [
             /*Thriller = */
             {
-                text: "Vous bustez les moves comme jamais avec une armée de zombies",
+                text: "L'esprit de MJ vous envahis sortant les moves de Thriller!",
                 action: "goToChapter('dead_zombie')",
             },
     
@@ -103,13 +103,13 @@ const chaptersObj = {
     },
 
     retour_foret: {
-        subtitle: "Le dernier chemin", 
+        subtitle: "RETOUR VERS LA FORÊT!", 
         text:"Vous entrez dans la forêt, l'ombre qui vous faisait peur est finalement éblouïs grâce à la Lumière! Le dernier boss Ombronomonstre est maintenant devant vous! Ombronomonstre vous lance une attaque!",
         img: "",
         options: [
             /*pewpewpew = */
             {
-                text: "Vous sortez vos doight pistol et tirez pewpewpew!",
+                text: "Doight pistol! Pewpewpew!",
                 action: "goToChapter('dead_pewpewpew')",
             },
     
@@ -122,38 +122,38 @@ const chaptersObj = {
     },
 
     phase_deux: {
-        subtitle: "Phase deux", 
+        subtitle: "PHASE DEUX!", 
         text:"Vous avez blessé l'oeil droite d'Ombronomonstre! Il vous attaque de votre droite! Vous sentez la fin de l'histoire et tout à coup, vous entendez une voix dans votre tête: « I am thou, thou art I. Call upon my name, and release thy rage!» Une flemme en vous se réveil! Vous avez reçu le Persona:",
         img: "",
         options: [
             /*Izanagi = */
             {
-            text: "MEGIDOLAON!",
+            text: "IZANAGI, MEGIDOLAON!",
             action: "goToChapter('final_attack')",
             },
 
             /*Orpheus = */
             {
-            text: "AGIDYNE!",
+            text: "ORPHEUS, AGIDYNE!",
             action: "goToChapter('final_attack')",
             },
 
             /*Arsene = */
             {
-            text: "MAEIGAON!",
+            text: "ARSENE, MAEIGAON!",
             action: "goToChapter('final_attack')",
             },
         ],
     },
 
     final_attack: {
-        subtitle: "Last Surprise", 
+        subtitle: "LAST SURPRISE", 
         text:"Ombronomonstre est sérieusement blessé! Dans sa dernière tentative de vous éliminer, il charge un méga laser! C'est le tout pour le tout!",
         img: "",
         options: [
             /*Friendship = */
             {
-                text: "Utilise Le pouvoir de l amitié. cent pourcent ça marche car le pouvoir de l amitié est imbattable",
+                text: "Utilise Le pouvoir de l'amitié. cent pourcent ça marche car le pouvoir de l'amitié est imbattable",
                 action: "goToChapter('dead_friendship')",
             },
     
@@ -166,7 +166,7 @@ const chaptersObj = {
     },
 
     getsuga_gomu_rasen_ha: {
-        subtitle: "getsuga gomu rasen ha", 
+        subtitle: "WEEB POWER", 
         text:"En canalisant la force de Weeb, vous lancez l'attaque la plus puissante de l'univers et de ce fait, Ombronomonstre est mort! Le butin s'offre a vous!",
         img: "",
         options: [
@@ -179,8 +179,15 @@ const chaptersObj = {
     },
     
     good_ending: {
-            subtitle: "Félicitation!", 
+            subtitle: "FÉLICITATION!", 
             text:"Merci d'avoir fini mon jeu et de pas avoir utilisé le pouvoir de l'amitier! Si vous l'avez choisi et c'est votre deuxième fois à jouer, parlez moi plus jamais. Merci.",
+            options: [
+                /*butin = */
+                {
+                    text: "Recommencer?",
+                    action: "goToChapter('gulag_island')",
+                },
+            ],
             img: "",
         },
     
@@ -188,7 +195,36 @@ const chaptersObj = {
 
 function goToChapter(chapterName) {
 
-    // const sub = document.querySelector(".mySubtitle");
+    const chapitre = chaptersObj[chapterName];
+    console.log(chapitre);
+    document.querySelector('.mySubtitle').textContent = chapitre.subtitle;
+    document.querySelector('.myText').textContent = chapitre.text;
+    // ??? document.querySelector('.a').textContent = chapitre.action;???
+    document.querySelector('.myImg').textContent = chapitre.img;
+   
+    let button = document.querySelectorAll('button');
+    let choix = document.querySelector('.bouton');
+    let optionsArr = chapitre.options;
+    console.log(optionsArr[length].action);
+    const addButton = document.createElement("button");
+    console.log(optionsArr.length);
+
+    let element = "";
+
+    for (let index = 0; index < optionsArr.length; index++) {
+        console.log(optionsArr[index].text);
+        element += `<button onclick="${optionsArr[index].action}">${optionsArr[index].text}</button>`;
+    };
+    choix.innerHTML = element;
+};
+
+
+
+
+
+
+
+// const sub = document.querySelector(".mySubtitle");
     // sub.innerHTML = "fuck";
     
 // -----------------------------document.querySelector("#myS").textContent = "poop";
@@ -205,30 +241,51 @@ p2 = subtitle = id > mySubtitle
 img = img
 ?bouton/button = action ?
 */
+// //     let optionsArr = chapitre.options;
+// //     let button = document.querySelectorAll('.a','.b','.c');
+// //     console.log(optionsArr[length].action);
 
-    const chapitre = chaptersObj[chapterName];
+// //     for (let index = 0; index <= optionsArr.length; index++) {
+// //     button[length].innerHTML = `${optionsArr[length].text}`;
+// //     const choix = optionsArr[index];
+// //     console.log(choix);
+// // }
 
-    document.querySelector('.mySubtitle').textContent = chapitre.subtitle;
-    document.querySelector('.myText').textContent = chapitre.text;
-    // ??? document.querySelector('.a').textContent = chapitre.action;???
-    // document.querySelector('.myImg').textContent = chapitre.img;
+//---------------maybe idk---------------------------//
+// let optionsArr = chapitre.options;
+// let button = document.querySelectorAll('.a');
+// let button2 = document.querySelectorAll('.b');
+// let button3 = document.querySelectorAll('.c');
+// console.log(optionsArr[0].action);
 
+// for (let index = 0; index <= optionsArr.length-1; index++) {
+// button[index].innerHTML = `${optionsArr[0].text}`;
+// button2[index].innerHTML = `${optionsArr[1].text}`;
+// button3[index].innerHTML = `${optionsArr[2].text}`;
+// // Y I K E S
+// const choix = optionsArr[index];
+// console.log(choix);
+// }
+//---------------------------------------------------------------//
 
-
-    console.log(chapitre.subtitle);
-    console.log(chapitre.text);
-    console.log(chapitre.img);
+    // console.log(chapitre.subtitle);
+    // console.log(chapitre.text);
+    // console.log(chapitre.img);
     // console.log(chapitre.action);
-    console.log(chapitre.options);
 
     //------boucle-----------//
-//     const choix = ["MEGIDOLAON!", "AGIDYNE!", "MAEIGAON!"];
+//     let optionsArr = chapitre.options;
+//     let button = document.querySelectorAll('.bouton');
+//     console.log(optionsArr[length].action);
+    
 
-//     for (let index = 0; index <=2; index++) {
-//     const bruh = choix[index];
-//     console.log(bruh);
+//     for (let index = 0; index <= optionsArr.length-1; index++) {
+//     button[length].innerHTML = `<button>${optionsArr[length].text}</button>`;
+   
+//     console.log();
 // }
-  };
+
+//   };
 
 
 //--------STORY PROGRESSION----------//

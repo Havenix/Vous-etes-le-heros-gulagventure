@@ -4,6 +4,7 @@
     --gray: #b3b6b7;
     --button: #6f1a07;
     --bg: #2b2118;
+    /* change gray for a better hover color */
 }
 @font-face {
     font-family: "abel" ;
@@ -43,7 +44,7 @@ img{
     border-radius: 30px;
 }
 button:hover{
-    color: blueviolet;
+    color: var(--bg)
 }
 button{
     background-color: var(--button);
@@ -73,6 +74,6 @@ h1 {
     font-size: 70px;
     font-weight: bolder;
 }
-.a, .b, .c {
+/* .a, .b, .c {
     border-radius: 10px;
-}
+} */
