@@ -17,18 +17,18 @@ let gotLumiere = 0;
 //le principe mais comme ca ca marche?
 //si j'ai la lumiere je passe dans la foret 
 //sinon je me fais bouffer par la grotte
-//I guess ce qui melange aussi c'est que j'au aussi 
-//une route au debut qui te mene a cette mort 
-//essentiellement, si tu as la lumiere, tu peux entrer dans la foret 
-//si tu ne l'as pas, tu meurs
+//I guess ce qui me melange aussi c'est que j'au aussi 
+//une route au debut qui te mene a cette mort. Essentiellement,
+// si tu as la lumiere, tu peux entrer dans la foret 
+//si tu ne l'as pas, tu meurs.
 //je sens aussi que je me suis perdu sans me perdre 
-//dans mes noms gotLumi et notLumi en donnant ce que 
+//dans mes noms gotLumi et notLumi en donnant le resultat que 
 //j'ai de besoin pareil
 
 restart = function () { 
     // return to (cette partie va etre 
     // le main menu, pour differencier de
-    // goToChapter)
+    // goToChapter)   *(goToChapter = still in the game)
   gotLumiere--;
   goToChapter(`gulag_island`);
 };
@@ -367,10 +367,10 @@ const chaptersObj = {
 
 // let gotLumiere = false;
 
-function bruh() {
-    gotLumiere = true 
-        console.log(goToChapter)
-};
+// function bruh() {
+//     gotLumiere = true 
+//         console.log(goToChapter)
+// };
 
 function goToChapter(chapterName) {
 
