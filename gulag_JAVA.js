@@ -1,20 +1,55 @@
 // let gotLumiere = false;
+
+let gotLumiere = 0;
+(notLumi = function () {
+  gotLumiere++;
+  goToChapter(`dead_grotto`);
+}),
+  (gotLumi = function () {
+    if (gotLumi > 0) {
+      goToChapter(`dead_grotto`);
+    } else {
+      goToChapter(`retour_foret`);
+    }
+  });
+
+//uh je suis pas sur si j'ai bien compris 
+//le principe mais comme ca ca marche?
+//si j'ai la lumiere je passe dans la foret 
+//sinon je me fais bouffer par la grotte
+//I guess ce qui melange aussi c'est que j'au aussi 
+//une route au debut qui te mene a cette mort 
+//essentiellement, si tu as la lumiere, tu peux entrer dans la foret 
+//si tu ne l'as pas, tu meurs
+//je sens aussi que je me suis perdu sans me perdre 
+//dans mes noms gotLumi et notLumi en donnant ce que 
+//j'ai de besoin pareil
+
+restart = function () { 
+    // return to (cette partie va etre 
+    // le main menu, pour differencier de
+    // goToChapter)
+  gotLumiere--;
+  goToChapter(`gulag_island`);
+};
+
 // changer le text des options pour plus court
 const chaptersObj = {
     gulag_island: {
         subtitle: "GULAG ISLAND",
         text:"L'aventure commence, vous arrivez enfin sur l'ile de Fortuna. Trois choix s'offre a vous:",
-        img: "",
+        // un gif marche masi pas video
+        img: "assets/images/aaaa.gif", //premier gif
         options: [
             /**Grotte = **/ 
             {
                 text: "Entrer dans la grotte",
-                action: "goToChapter('dead_grotte')",
+                action: "notLumi()",
             },
             /**Foret = **/  
             {
                 text: "Attendre un passant",
-                action: "goToChapter('waiting_tatakae')",
+                action: "goToChapter('waiting')",
             },
             /**Attendre = **/ 
             {
@@ -24,10 +59,24 @@ const chaptersObj = {
         ],
     },
 
+    dead_grotto: {
+        subtitle: "chomp", 
+        text:"mioum",
+        img: "assets/images/hey.gif", //gif qui attend
+    
+        options: [
+            /*fini attendre =*/ 
+            {
+                text: "why u do diss",
+                action: "restart()",
+            },
+        ],
+    },
+
     entree_foret: {
         subtitle: "DÉCISION", 
         text:"Un vent extrêmement froid vous passe par le dos. Vous vous demandez si c'est vraiment un bon choix...",
-        img: "",
+        img: "assets/images/run.gif",
     
         options: [
             // entre: 
@@ -38,31 +87,59 @@ const chaptersObj = {
             // retourne: 
             {
                 text: "Prenez votre courage a douze mains et entrer dans la forêt...",
-                action: "goToChapter('dead_foret')",
+                action: "notLumi()",
             },
         ],
     },
 
-    waiting_tatakae: {
-        subtitle: "WAITING? TATAKAE!", 
-        text:"Vous en avez marre d'attendre et decidez d'aller attaquer directement le créateur. Trois attaques sont offert a vous:",
-        img: "",
+    waiting: {
+        subtitle: "WAITING?", 
+        text:"Vous attendez mais la ça commence a devenir long et personne semble venir.",
+        img: "assets/images/hey.gif", //gif qui attend
     
         options: [
-            /*SuperCoupDeBoule =*/ 
+            /*fini attendre =*/ 
+            {
+                text: "ÇA SUFFIT LÀ LÀ! CRÉATEUR VIENS, ON VA SE BATTRE!",
+                action: "goToChapter('tatakae')",
+            },
+        ],
+    },
+
+    tatakae: {
+        subtitle: "TATAKAE!", 
+        text:"Vous en avez marre d'attendre et decidez d'aller attaquer directement le créateur.",
+        img: "assets/images/hey.gif", // gif qui cours
+    
+        options: [
+            /*running =*/ 
+            {
+                text: "Héro VS Le Créateur!",
+                action: "goToChapter('vs_createur')",
+            },
+        ]
+    },
+
+    vs_createur: {
+        subtitle: "1er Boss, Le Créateur!", 
+        text:"Le Créateur est maintenant devant vous! Stay determined! Trois attaques vous passe par la tête:",
+        img: "assets/images/hey.gif", // gif du créateur stance jojo
+    
+        options: [
+            /*dance =*/ 
             {
                 text: "Utiliser des moves de ouf pour le vaincre",
                 action: "goToChapter('dance_battle')",
             },
     
     
-            /*Invoquation = */
+            /*coup de boule = */
             {
                 text: "Sauter comme Zidane avec un coup de boule",
                 action: "goToChapter('dead_crane')",
             },
 
-            /*dance = */
+            /*summon = */
             {
                 text: "Invoquer Dieu",
                 action: "goToChapter('dead_dieu')",
@@ -73,7 +150,7 @@ const chaptersObj = {
     dance_battle: {
         subtitle: "SO YOU THING YOU CAN DANCE?!", 
         text:"C'est le temps de bust-a-move!",
-        img: "",
+        img: "assets/images/cat.gif", //gif meme dance
         options: [
             /*Thriller = */
             {
@@ -84,28 +161,59 @@ const chaptersObj = {
             /*SmoothCriminal = */
             {
                 text: "L'esprit de MJ vous envahis sortant les moves d'un smooth criminal",
-                action: "goToChapter('createur_lumiere')",
+                action: "goToChapter('smooth')",
             },
         ],
     },
 
-    createur_lumiere: {
+    smooth: {
+        subtitle: "Smooth Criminal!", 
+        text:"HEE~ HEE~!",
+        img: "assets/images/cat.gif", //gif smooth criminal
+        options: [
+            /*dance criminal = */
+            {
+                text: "HEE~ HEE~ OW!",
+                action: "goToChapter('win_lumiere')",
+            },
+        ],
+    },
+
+    win_lumiere: {
         subtitle: "WINNER!", 
         text:"Le créateur est vaincu! Vous gagnez 133742069 EXP! Le Créateur vous donne la Lumière en guise de récompense!",
-        img: "",
+        img: "assets/images/ash.gif", //img createur ded gg easy money
         options: [
             /*DirectionForet = */
             {
                 text: "armer de la Lumière, vous êtes maintenant prêt à affronter le dernier boss! Direction la foret!",
-                action: "goToChapter('retour_foret')",
+                action: "gotLumi()",
             },
         ],
     },
 
     retour_foret: {
         subtitle: "RETOUR VERS LA FORÊT!", 
+        text:"Vous vous trouvez devant la forêt...",
+        img: "assets/images/spe.gif", // marche vers la foret undefined
+        options: [
+            /*pewpewpew = */
+            {
+                text: "Entrer dans la forêt",
+                action: "goToChapter('enter')",
+            },
+
+            {
+                text: "Vous n'avez pas de lumière",
+                action: "notLumi()",
+            },
+        ],
+    },
+
+    enter: {
+        subtitle: "Dernier boss, Ombronomonstre!", 
         text:"Vous entrez dans la forêt, l'ombre qui vous faisait peur est finalement éblouïs grâce à la Lumière! Le dernier boss Ombronomonstre est maintenant devant vous! Ombronomonstre vous lance une attaque!",
-        img: "",
+        img: "assets/images/spe.gif", // marche vers la foret undefined
         options: [
             /*pewpewpew = */
             {
@@ -115,7 +223,19 @@ const chaptersObj = {
     
             /*TheKnee = */
             {
-                text: "La force sublime de Captain Falcon surgis de vous! FALCON KNEE!",
+                text: "FALCON KNEE!",
+                action: "goToChapter('falcon_knee')",
+            },
+        ],
+    },
+
+    falcon_knee: {
+        subtitle: "HYESZ", 
+        text:"La force sublime de Captain Falcon surgis de vous!",
+        img: "assets/images/spe.gif", // FALCON KNEE ANIMATED
+        options: [
+            {
+                text: "GAME?",
                 action: "goToChapter('phase_deux')",
             },
         ],
@@ -124,23 +244,62 @@ const chaptersObj = {
     phase_deux: {
         subtitle: "PHASE DEUX!", 
         text:"Vous avez blessé l'oeil droite d'Ombronomonstre! Il vous attaque de votre droite! Vous sentez la fin de l'histoire et tout à coup, vous entendez une voix dans votre tête: « I am thou, thou art I. Call upon my name, and release thy rage!» Une flemme en vous se réveil! Vous avez reçu le Persona:",
-        img: "",
+        img: "assets/images/jok.gif",
         options: [
             /*Izanagi = */
             {
             text: "IZANAGI, MEGIDOLAON!",
-            action: "goToChapter('final_attack')",
+            action: "goToChapter('izanagi')",
             },
 
             /*Orpheus = */
             {
             text: "ORPHEUS, AGIDYNE!",
-            action: "goToChapter('final_attack')",
+            action: "goToChapter('orpheus')",
             },
 
             /*Arsene = */
             {
             text: "ARSENE, MAEIGAON!",
+            action: "goToChapter('arsene')",
+            },
+        ],
+    },
+
+    izanagi: {
+        subtitle: "PERSONA!", 
+        text:"Yuu Narukami est fière de vous en ce moment",
+        img: "assets/images/jok.gif", //gif attaque izanagi
+        options: [
+            /*Izanagi = */
+            {
+            text: "...",
+            action: "goToChapter('final_attack')",
+            },
+        ],
+    },
+
+    orpheus: {
+        subtitle: "PERSONA!", 
+        text:"Makoto Yuki est fière de vous en ce moment",
+        img: "assets/images/jok.gif", //gif attaque orpheus
+        options: [
+            /*Orpheus = */
+            {
+            text: "...",
+            action: "goToChapter('final_attack')",
+            },
+        ],
+    },
+
+    arsene: {
+        subtitle: "PERSONA!", 
+        text:"Ren Amamiya est fière de vous en ce moment",
+        img: "assets/images/jok.gif", //gif attaque arsene
+        options: [
+            /*Arsene = */
+            {
+            text: "...",
             action: "goToChapter('final_attack')",
             },
         ],
@@ -149,7 +308,7 @@ const chaptersObj = {
     final_attack: {
         subtitle: "LAST SURPRISE", 
         text:"Ombronomonstre est sérieusement blessé! Dans sa dernière tentative de vous éliminer, il charge un méga laser! C'est le tout pour le tout!",
-        img: "",
+        img: "assets/images/gop.gif",
         options: [
             /*Friendship = */
             {
@@ -165,10 +324,23 @@ const chaptersObj = {
         ],
     },
 
+    dead_friendship: {
+        subtitle: "bruh", 
+        text:"bruh",
+        img: "assets/images/jok.gif", //gif attaque arsene
+        options: [
+            
+            {
+            text: "bruh",
+            action: "restart()",
+            },
+        ],
+    },
+
     getsuga_gomu_rasen_ha: {
         subtitle: "WEEB POWER", 
-        text:"En canalisant la force de Weeb, vous lancez l'attaque la plus puissante de l'univers et de ce fait, Ombronomonstre est mort! Le butin s'offre a vous!",
-        img: "",
+        text:"En canalisant la force de Weeb, vous lancez l'attaque la plus puissante de l'univers et de ce fait",
+        img: "assets/images/weeb.gif",
         options: [
             /*butin = */
             {
@@ -181,6 +353,7 @@ const chaptersObj = {
     good_ending: {
             subtitle: "FÉLICITATION!", 
             text:"Merci d'avoir fini mon jeu et de pas avoir utilisé le pouvoir de l'amitier! Si vous l'avez choisi et c'est votre deuxième fois à jouer, parlez moi plus jamais. Merci.",
+            img: "assets/images/yes.gif",
             options: [
                 /*butin = */
                 {
@@ -188,9 +361,15 @@ const chaptersObj = {
                     action: "goToChapter('gulag_island')",
                 },
             ],
-            img: "",
         },
     
+};
+
+// let gotLumiere = false;
+
+function bruh() {
+    gotLumiere = true 
+        console.log(goToChapter)
 };
 
 function goToChapter(chapterName) {
@@ -200,13 +379,11 @@ function goToChapter(chapterName) {
     document.querySelector('.mySubtitle').textContent = chapitre.subtitle;
     document.querySelector('.myText').textContent = chapitre.text;
     // ??? document.querySelector('.a').textContent = chapitre.action;???
-    document.querySelector('.myImg').textContent = chapitre.img;
-   
-    let button = document.querySelectorAll('button');
+    document.querySelector('.myImg').src = chapitre.img;
+    // document.querySelector('myVideo').src =
     let choix = document.querySelector('.bouton');
     let optionsArr = chapitre.options;
     console.log(optionsArr[length].action);
-    const addButton = document.createElement("button");
     console.log(optionsArr.length);
 
     let element = "";
@@ -289,16 +466,23 @@ img = img
 
 
 //--------STORY PROGRESSION----------//
-//   gulag_island
+// --------------------------Add the new options----------------------//
+
+//   gulag_island  ---------------------------DREW-|-NOT ANIMATED-|-NOT COLORED
 //   entree_foret
-//   waiting_tatakae
-//   dance_battle
-//   createur_lumiere
-//   retour_foret
-//   phase_deux
-//   final_attack
-//   getsuga_gomu_rasen_ha
-//   good_ending
+//   waiting       ---------------------------DREW-|-NOT ANIMATED-|-NOT COLORED
+//   tatakae (aller tuer le dessinateur)------DREW-|-NOT ANIMATED-|-NOT COLORED
+//   1st_boss_screen (fight) -----------------DREW-|-NOT ANIMATED-|-NOT COLORED
+//   dance_battle ----------------------------DREW-|-NOT ANIMATED-|-NOT COLORED
+//   smooth_criminal -------------------------DREW-|-NOT ANIMATED-|-NOT COLORED
+//   win_lumiere -----------------------------DREW (NO NEED TO ANIMATE IDK)-|-NOT COLORED
+//   retour_foret ----------------------------IDK IF THIS IS STANDARD
+//   phase_deux ------------------------------
+//   persona ---------------------------------(persona attack)
+//   final_attack ----------------------------
+//   getsuga_gomu_rasen_ha -------------------(attack)
+//   ombro_dead ------------------------------(win)
+//   good_ending -----------------------------(end)
 
 //-------BAD ENDS-----------//
 // dead_grotte
