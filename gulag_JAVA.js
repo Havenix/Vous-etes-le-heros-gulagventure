@@ -1,8 +1,27 @@
-let gotLumiere = false;
+let gotLumiere = "";
 
-function notLumi() {
+
+function beatGod() {
   gotLumiere = true;
-  goToChapter(`dead_grotto`);
+  localStorage.setItem("lumiere", gotLumiere);
+  console.log(localStorage.getItem("lumiere"));
+  goToChapter('retour_foret');
+}
+/*utilise ceci si jamais je retourne a l'idee de base et je met deux chemin different au boss.
+tu vas devoir rajouter un chapitre menant a la foret et ensuite avoir l'option de si tu as la lumiere*/
+
+// function killGod() {
+//   gotLumiere = false;
+//   localStorage.setItem("lumiere", gotLumiere);
+//   console.log(localStorage.getItem("lumiere"));
+//   goToChapter('dead_grotte');
+// }
+//-----------------------------------------------------------//
+
+function pendingGod() {
+  gotLumiere = false;
+  localStorage.getItem("lumiere", gotLumiere);
+  goToChapter('dead_grotte')
 }
 
 function gotLumi() {
@@ -13,13 +32,36 @@ function gotLumi() {
   }
 }
 
+function notLumi() {
+  gotLumiere = true;
+  goToChapter(`dead_grotto`);
+}
+
+
+
 function restart() {
-  // return to (cette partie va etre
-  // le main menu, pour differencier de
-  // goToChapter)   *(goToChapter = still in the game)
   gotLumiere = false;
   goToChapter(`gulag_island`);
 };
+// let gotLumiere = false;
+
+// function notLumi() {
+//   gotLumiere = true;
+//   goToChapter(`dead_grotto`);
+// }
+
+// function gotLumi() {
+//   if (gotLumi == true) {
+//     goToChapter(`dead_grotto`);
+//   } else {
+//     goToChapter(`retour_foret`);
+//   }
+// }
+
+// function restart() {
+//   gotLumiere = false;
+//   goToChapter(`gulag_island`);
+// };
 
 // changer le text des options pour plus court
 const chaptersObj = {
@@ -374,8 +416,8 @@ function goToChapter(chapterName) {
   const song = new Audio('assets/sons/mm-non.mp3');
 // LE SON AUGMENTE A CHAQUE CLICK HALP
   choix.addEventListener('click', function(){
-    choix.classList.add('.play')
     song.currentTime = 0;
+    choix.classList.add('.play')
     song.play();
 });
 
@@ -404,7 +446,17 @@ function goToChapter(chapterName) {
 
         video.innerHTML = vidElement;
     }
+
+    localStorage.setItem("chapter", chapterName);
 }
+
+if (localStorage.getItem("chapter") != undefined) {
+  const chapter = localStorage.getItem("chapter");
+  goToChapter(chapter);
+} else{
+  goToChapter('gulag_island');
+};
+
 
 goToChapter("gulag_island");
 // https://www.youtube.com/watch?v=J85jV37CsYE&list=PLWL3FzHaRRMkQqUhks8Y9l35rqY_kKCto
