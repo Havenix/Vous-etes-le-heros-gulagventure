@@ -401,6 +401,8 @@ const chaptersObj = {
 //         console.log(goToChapter)
 // };
 
+const song = new Audio('assets/sons/mm-non.mp3');
+
 function goToChapter(chapterName) {
 
   const chapitre = chaptersObj[chapterName];
@@ -412,14 +414,9 @@ function goToChapter(chapterName) {
   let optionsArr = chapitre.options;
   console.log(optionsArr[length].action);
   console.log(optionsArr.length);
-  
-  const song = new Audio('assets/sons/mm-non.mp3');
-// LE SON AUGMENTE A CHAQUE CLICK HALP
-  choix.addEventListener('click', function(){
-    song.currentTime = 0;
-    choix.classList.add('.play')
-    song.play();
-});
+
+  song.currentTime = 0;
+  song.play();
 
   let element = "";
 
@@ -457,8 +454,6 @@ if (localStorage.getItem("chapter") != undefined) {
   goToChapter('gulag_island');
 };
 
-
-goToChapter("gulag_island");
 // https://www.youtube.com/watch?v=J85jV37CsYE&list=PLWL3FzHaRRMkQqUhks8Y9l35rqY_kKCto
 // https://www.youtube.com/watch?v=D2_r4q2imnQ&list=PLWL3FzHaRRMkQqUhks8Y9l35rqY_kKCto&index=5
 // https://www.youtube.com/watch?v=OMm1RLF32ig&list=PLWL3FzHaRRMkQqUhks8Y9l35rqY_kKCto&index=15
@@ -474,9 +469,9 @@ goToChapter("gulag_island");
 // 
 
 // const sub = document.querySelector(".mySubtitle");
-// sub.innerHTML = "fuck";
+// sub.innerHTML = "fuck"; // Ok
 
-// -----------------------------document.querySelector("#myS").textContent = "poop";
+// -----------------------------document.querySelector("#myS").textContent = "poop"; // Well, si ça t'aide a déboguer
 // console.log(mySubtitle.innerHTML);
 // #3 - Toujours dans la même fonction, récupérez l’image de votre chapitre,
 // composez une chaîne de caractères correspondant à une balise image
