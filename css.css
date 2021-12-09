@@ -1,10 +1,14 @@
 :root {
     --screen: #af9164;
-    --text: #f7f3e3;
+    --text: #FFFFFF;
+    --text2: #52DFFB;
+    --text3: #F54C9E;
     --gray: #b3b6b7;
-    --button: #6f1a07;
+    --red: #AD0000;
+    --button: #000000;
     --bg: #2b2118;
     /* change gray for a better hover color */
+    /*https://coolors.co/ffffff-ad0000-000000-52dffb-f54c9e*/
 }
 @font-face {
     font-family: "abel" ;
@@ -15,6 +19,10 @@
     font-family: "Tourney";
     src: url(assets/Tourney.ttf);
 }
+@font-face {
+    font-family: "persona";
+    src: url(assets/earwig\ factory\ rg.ttf);
+}
 body {
     background-color: var(--bg);
     display: flex;
@@ -22,10 +30,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .game {
-    background-color: var(--screen);
+    border-style: solid;
+    border-color: var(--button);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -44,35 +54,71 @@ img{
     border-radius: 30px;
 }
 button:hover{
-    color: var(--bg)
+    color: var(--text2);
+    background-color: var(--button);
+    border-color: var(--text);
+    /* font-weight: 900; */
+}
+button:nth-last-child(1):hover {
+    color: var(--text3);
+    background-color: var(--button);
+    border-color: var(--text);
+    font-weight: normal;
+}
+button:nth-last-child(1) {
+    color: var(--button);
+    background-color: var(--gray);
+    border-color: var(--button);
+    font-weight: normal;
 }
 button{
-    background-color: var(--button);
+    background-color: var(--text2);
     color: var(--text);
+    border-style: solid;
+    border-radius: 5px 0px 5px 0px;
+    border-color: var(--button);
+    
 }
+.checkbox {
+    padding: 10px;
+    background-color: var(--button);
+    border-radius: 10px;
+    position: relative;
+    bottom: 550px;
+    left: 250px;
+}
+/* #son {
+    display: none;
+} */
 .bouton {
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 30px;
     font-family: "abel";
+    margin: 10px;
+    
 }
 
 p {
     margin: 15px;
     font-size: 20px;
+    font-weight: bold;
+    border-color: var(--text);
     display: flex;
     justify-content: center;
     font-family: "abel";
 }
 h1 {
     font-family: "Tourney";
-    font-size: 40px;
+    font-size: 60px;
 }
-.p2 {
-    font-family: "Tourney";
-    font-size: 70px;
-    font-weight: bolder;
+.mySubtitle {
+    font-family: "persona";
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: normal;
 }
 /* .a, .b, .c {
     border-radius: 10px;
