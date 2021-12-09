@@ -73,7 +73,7 @@ button:nth-last-child(1) {
 }
 button{
     background-color: var(--text2);
-    color: var(--text);
+    color: var(--button);
     border-style: solid;
     border-radius: 5px 0px 5px 0px;
     border-color: var(--button);
