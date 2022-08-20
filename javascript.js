@@ -266,7 +266,7 @@ const chaptersObj = {
 
       /*summon = */
       {
-        text: "Invoque God",
+        text: "Summon God",
         action: "goToChapter('dead_dieu')",
       },
       {
