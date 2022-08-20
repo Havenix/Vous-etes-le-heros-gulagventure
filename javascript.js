@@ -71,34 +71,34 @@ function reset() {
 const chaptersObj = {
   gulag_island: {
     subtitle: "GULAG ISLAND",
-    text: "L'aventure commence, vous arrivez enfin sur l'ile de Fortuna. Trois choix s'offre a vous:",
+    text: "Your journey starts, you finally arrive at Fortuna's Island. Three paths are open to you:",
     // un gif marche masi pas video
     img: "assets/images/1_gulag.gif", //premier gif
     options: [
       /**Grotte = **/
       {
-        text: "Entrer dans la grotte",
+        text: "Enter the cave",
         action: "notLumi()",
       },
       /**Foret = **/
       {
-        text: "Attendre un passant",
+        text: "Wait for someone to pass",
         action: "goToChapter('waiting')",
       },
       /**Attendre = **/
       {
-        text: "Entrer dans la forêt",
+        text: "Enter the forest",
         action: "goToChapter('entree_foret')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()",
       },
     ],
   },
 
   dead_grotto: {
-    subtitle: "LE GROTTOMONSTRE VOUS BOUFFE",
+    subtitle: "THE GROTTOMONSTER EATS YOU",
     text: "Mioum!",
     // video: "assets/videos/bait.mp4",
     img: "assets/images/stare-confused.gif", //gif qui attend
@@ -114,7 +114,7 @@ const chaptersObj = {
 
   dead_foret: {
     subtitle: "RIPPERONIE",
-    text: "Qui entre dans une forêt noir sans lumière?",
+    text: "Who enters a dark forest with no light?",
    
     img: "assets/images/stare-confused.gif", //gif qui attend
 
@@ -128,8 +128,8 @@ const chaptersObj = {
   },
 
   dead_crane: {
-    subtitle: "COUP DE BOULEEE",
-    text: "Zidane a eu une pénalité oui mais toi tu crèves.",
+    subtitle: "HEADBUUUUUTT",
+    text: "Zidane got a penality but not you, you die.",
     
     img: "assets/images/stare-confused.gif", //gif qui attend
 
@@ -143,8 +143,8 @@ const chaptersObj = {
   },
 
   dead_dieu: {
-    subtitle: "IMAGINEZ DÉFIER DIEU...",
-    text: "Mais tu te prends pour qui?",
+    subtitle: "IMAGINE DEFYING GOD...",
+    text: "Who do you think you are?",
     
     img: "assets/images/stare-confused.gif", //gif qui attend
 
@@ -159,7 +159,7 @@ const chaptersObj = {
 
   dead_zombie: {
     subtitle: "THRILLERRRRR",
-    text: "Il y a beaucoup de viande dans le corps humain vous savez? Assez juteux.",
+    text: "There's a lot of meat in the human body you know? Juicy meats.",
     
     img: "assets/images/stare-confused.gif", //gif qui attend
 
@@ -174,7 +174,7 @@ const chaptersObj = {
 
   dead_pewpewpew: {
     subtitle: "BANG BANG BANG",
-    text: "Avec tes doigts? Même Jeesay est plus intelligent que ça.",
+    text: "With your figners? This isn't some anime.",
     
     img: "assets/images/stare-confused.gif", //gif qui attend
 
@@ -188,8 +188,8 @@ const chaptersObj = {
   },
 
   entree_foret: {
-    subtitle: "DÉCISION",
-    text: "Un vent extrêmement froid vous passe par le dos. Vous vous demandez si c'est vraiment un bon choix...",
+    subtitle: "DECISION",
+    text: "A cold breeze brushes your back. You are now wondering if it was really a good choice...",
     img: "assets/images/8_retour.png",
 
     options: [
@@ -200,11 +200,11 @@ const chaptersObj = {
       },
       // retourne:
       {
-        text: "Prenez votre courage a douze mains...",
+        text: "Take your courage and go forth...",
         action: "notLumi()",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -212,17 +212,17 @@ const chaptersObj = {
 
   waiting: {
     subtitle: "WAITING?",
-    text: "Vous attendez mais la ça commence a devenir long et personne semble venir.",
+    text: "You choose to wait but nobody comes, it's starting to be late.",
     img: "assets/images/2_wait.gif", //gif qui attend
 
     options: [
       /*fini attendre =*/
       {
-        text: "ÇA SUFFIT LÀ LÀ! CRÉATEUR VIENS, ON VA SE BATTRE!",
+        text: "IT'S ENOUGH! CREATOR! COME FIGHT ME!",
         action: "goToChapter('tatakae')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -230,25 +230,25 @@ const chaptersObj = {
 
   tatakae: {
     subtitle: "TATAKAE!",
-    text: "Vous en avez marre d'attendre et decidez d'aller attaquer directement le créateur.",
+    text: "Tired of waiting, you decide to take on the Creator of this game.",
     img: "assets/images/3_tuer.gif", // gif qui cours
 
     options: [
       /*running =*/
       {
-        text: "Héro VS Le Créateur!",
+        text: "Hero VS The Creator!",
         action: "goToChapter('vs_createur')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
   },
 
   vs_createur: {
-    subtitle: "1er BOSS, LE CRÉATEUR!",
-    text: "Le Créateur est maintenant devant vous! Stay determined! Trois attaques vous passe par la tête:",
+    subtitle: "1st Boss, THE CREATOR!",
+    text: "The Creator is now facing you! Stay determined! Three attacks comes to you mind:",
     img: "assets/images/4_fght.gif", // gif du créateur stance jojo
 
     options: [
@@ -260,17 +260,17 @@ const chaptersObj = {
 
       /*coup de boule = */
       {
-        text: "Coup de boule à la Zidane",
+        text: "Headbutt à la Zidane",
         action: "goToChapter('dead_crane')",
       },
 
       /*summon = */
       {
-        text: "Invoquer Dieu",
+        text: "Invoque God",
         action: "goToChapter('dead_dieu')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -278,22 +278,22 @@ const chaptersObj = {
 
   dance_battle: {
     subtitle: "SO YOU THING YOU CAN DANCE?!",
-    text: "C'est le temps de bust-a-move!",
+    text: "It's time to bust-a-move!",
     img: "assets/images/5_danse.gif", //gif meme dance
     options: [
       /*Thriller = */
       {
-        text: "Danser Thriller",
+        text: "Thriller dance",
         action: "goToChapter('dead_zombie')",
       },
 
       /*SmoothCriminal = */
       {
-        text: "Danser Smooth Criminal",
+        text: "Smooth Criminal dance",
         action: "goToChapter('smooth')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -319,51 +319,51 @@ const chaptersObj = {
 
   win_lumiere: {
     subtitle: "WINNER!",
-    text: "Le créateur est vaincu! Vous gagnez 133742069 EXP! Le Créateur vous donne la Lumière en guise de récompense!",
+    text: "The Creator is defeated! You obtain 133742069 EXP! The Creator gives you the Light!",
     img: "assets/images/7_win.gif", //img createur ded gg easy money
     options: [
       /*DirectionForet = */
       {
-        text: "Direction la foret",
+        text: "Head to the forest",
         action: "gotLumi()",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
   },
 
   retour_foret: {
-    subtitle: "RETOUR VERS LA FORÊT!",
-    text: "Vous vous trouvez devant la forêt...",
+    subtitle: "RETURN TO THE FOREST!",
+    text: "You are standing in front of the forest...",
     img: "assets/images/8_retour.png", // marche vers la foret undefined
     options: [
       /*pewpewpew = */
       {
-        text: "Entrer dans la forêt",
+        text: "Enter the forest",
         action: "goToChapter('enter')",
       },
 
       {
-        text: "Vous n'avez pas de lumière",
+        text: "You don't have the Light",
         action: "notLumi()",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
   },
 
   enter: {
-    subtitle: "DERNIER BOSS",
-    text: "L'ombre qui vous faisait peur est finalement éblouïs grâce à la Lumière! Le dernier boss Ombronomonstre est maintenant devant vous!",
+    subtitle: "LAST BOSS",
+    text: "The shadow that was spooking you is now gone, obliterated by the Light! The last boss Ombronomonster has appeared!",
     img: "assets/images/9_entrer.png", // marche vers la foret undefined
     options: [
       /*pewpewpew = */
       {
-        text: "Doight pistol! Pewpewpew!",
+        text: "Finger Gun! Pewpewpew!",
         action: "goToChapter('dead_pewpewpew')",
       },
 
@@ -373,7 +373,7 @@ const chaptersObj = {
         action: "goToChapter('falcon_knee')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -381,7 +381,7 @@ const chaptersObj = {
 
   falcon_knee: {
     subtitle: "HYESZ",
-    text: "La force sublime de Captain Falcon surgis de vous!",
+    text: "The sublime force of Captain Falcon arises from you!",
     img: "assets/images/10_knee.gif", // FALCON KNEE ANIMATED
     options: [
       {
@@ -389,15 +389,15 @@ const chaptersObj = {
         action: "goToChapter('phase_deux')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
   },
 
   phase_deux: {
-    subtitle: "PHASE DEUX!",
-    text: "Vous sentez la fin de l'histoire et tout à coup, vous entendez une voix dans votre tête: « I am thou, thou art I. Call upon my name, and release thy rage!» Une flemme en vous se réveil! Vous avez reçu le Persona:",
+    subtitle: "PHASE TWO!",
+    text: "You feel the end of the story, suddenly you hear a voice in your head: « I am thou, thou art I. Call upon my name, and release thy rage!» Une flemme en vous se réveil! Vous avez reçu le Persona:",
     img: "assets/images/jok.gif",
     options: [
       /*Izanagi = */
@@ -418,7 +418,7 @@ const chaptersObj = {
         action: "goToChapter('arsene')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -426,7 +426,7 @@ const chaptersObj = {
 
   izanagi: {
     subtitle: "PERSONA!",
-    text: "Yuu Narukami est fière de vous en ce moment",
+    text: "Yuu Narukami is proud of you ",
     img: "assets/images/11_izanagi.gif", //gif attaque izanagi
     options: [
       /*Izanagi = */
@@ -435,7 +435,7 @@ const chaptersObj = {
         action: "goToChapter('final_attack')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -443,7 +443,7 @@ const chaptersObj = {
 
   orpheus: {
     subtitle: "PERSONA!",
-    text: "Makoto Yuki est fière de vous en ce moment",
+    text: "Makoto Yuki is proud of you",
     img: "assets/images/12_orph.gif", //gif attaque orpheus
     options: [
       /*Orpheus = */
@@ -452,7 +452,7 @@ const chaptersObj = {
         action: "goToChapter('final_attack')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -460,7 +460,7 @@ const chaptersObj = {
 
   arsene: {
     subtitle: "PERSONA!",
-    text: "Ren Amamiya est fière de vous en ce moment",
+    text: "Ren Amamiya is proud of you",
     img: "assets/images/13_arsene.gif", //gif attaque arsene
     options: [
       /*Arsene = */
@@ -469,7 +469,7 @@ const chaptersObj = {
         action: "goToChapter('final_attack')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -477,22 +477,22 @@ const chaptersObj = {
 
   final_attack: {
     subtitle: "LAST SURPRISE",
-    text: "Ombronomonstre est sérieusement blessé! Dans sa dernière tentative de vous éliminer, il charge un méga laser! C'est le tout pour le tout!",
+    text: "Ombronomonster is seriously injured! In his last attempt to take you out, he charges up a mega laser! It's all or nothing!",
     img: "assets/images/15_laser.gif",
     options: [
       /*Friendship = */
       {
-        text: "Pouvoir de l'amitié, 100% ça marche",
+        text: "Friendship Power, 100% it works",
         action: "goToChapter('dead_friendship')",
       },
 
       /*FusionWeebCeleste = */
       {
-        text: "Fusionnez avec Luffy, Goku et Ichigo",
+        text: "Fuse with Luffy, Goku and Ichigo",
         action: "goToChapter('getsuga_gomu_rasen_ha')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
@@ -513,29 +513,29 @@ const chaptersObj = {
 
   getsuga_gomu_rasen_ha: {
     subtitle: "WEEB POWER",
-    text: "En canalisant la force de Weeb, vous lancez l'attaque la plus puissante de l'univers et de ce fait Ombronomonstre est vaincu!",
+    text: "By channeling your inner Weeb, you launch the most powerful attack in the universe and thus Ombronomonster is defeated!",
     img: "assets/images/16_dbp.gif",
     options: [
       /*butin = */
       {
-        text: "Vous avez fini. La récompense est maintenant à vous! Félicitation!",
+        text: "Mission complete! The reward is now yours! Congratulation!",
         action: "goToChapter('good_ending')",
       },
       {
-        text: "Effacer data",
+        text: "Erase data",
         action: "reset()"
       },
     ],
   },
 
   good_ending: {
-    subtitle: "FÉLICITATION!",
-    text: "Merci d'avoir fini mon jeu et de pas avoir utilisé le pouvoir de l'amitier! Si vous l'avez choisi et c'est votre deuxième fois à jouer, parlez moi plus jamais. Merci.",
+    subtitle: "CONGRATULATION!",
+    text: "Thank you for playing my game and not using the power of friendship! If you chose it and it's your second time playing, never talk to me ever again. Thanks.",
     img: "assets/images/yes.gif",
     options: [
       /*butin = */
       {
-        text: "Recommencer?",
+        text: "Restart?",
         action: "reset()"
       },
     ],
