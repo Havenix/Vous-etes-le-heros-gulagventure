@@ -71,7 +71,7 @@ function reset() {
 const chaptersObj = {
   gulag_island: {
     subtitle: "GULAG ISLAND",
-    text: "poop, vous arrivez enfin sur l'ile de Fortuna. Trois choix s'offre a vous:",
+    text: "L'aventure commence, vous arrivez enfin sur l'ile de Fortuna. Trois choix s'offre a vous:",
     // un gif marche masi pas video
     img: "assets/images/1_gulag.gif", //premier gif
     options: [
